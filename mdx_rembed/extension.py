@@ -1,6 +1,6 @@
 from markdown.extensions import Extension
 
-import pattern
+from . import pattern
 
 class REmbedExtension(Extension):
     def extendMarkdown(self, md, md_globals):
