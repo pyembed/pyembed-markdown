@@ -3,6 +3,14 @@ REmbed Markdown
 
 .. image:: https://secure.travis-ci.org/matt-thomson/rembed-markdown.png?branch=master
     :target: http://travis-ci.org/matt-thomson/rembed-markdown
+.. image:: https://coveralls.io/repos/matt-thomson/rembed-markdown/badge.png
+    :target: https://coveralls.io/r/matt-thomson/rembed
+.. image:: https://codeq.io/github/matt-thomson/rembed-markdown/badges/master.png
+    :target: https://codeq.io/github/matt-thomson/rembed-markdown/branches/master
+.. image:: https://pypip.in/v/rembed-markdown/badge.png
+    :target: https://crate.io/packages/rembed-markdown/
+.. image:: https://pypip.in/d/rembed-markdown/badge.png
+    :target: https://crate.io/packages/rembed-markdown/
 
 Python Markdown extension for embedding content using `OEmbed`_.
 
