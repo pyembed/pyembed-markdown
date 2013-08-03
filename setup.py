@@ -2,13 +2,16 @@ from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import sys
 
+
 class PyTest(TestCommand):
+
     def finalize_options(self):
         TestCommand.finalize_options(self)
         self.test_args = ['rembed']
         self.test_suite = True
+
     def run_tests(self):
-        #import here, cause outside the eggs aren't loaded
+        # import here, cause outside the eggs aren't loaded
         import pytest
         errno = pytest.main(self.test_args)
         sys.exit(errno)
@@ -20,7 +23,8 @@ setup(
     author_email='matt.thomson@cantab.net',
     url='https://github.com/matt-thomson/rembed-markdown',
     description='Python Markdown extension for embedding content using OEmbed',
-    long_description=open('README.rst').read() + '\n\n' + open('CHANGES.rst').read(),
+    long_description=open('README.rst').read() + '\n\n' +
+        open('CHANGES.rst').read(),
     download_url='https://pypi.python.org/pypi/rembed-markdown/',
     license=open('LICENSE.txt').read(),
 
@@ -37,10 +41,10 @@ setup(
         'mock',
         'pytest'
     ],
-    
-    cmdclass = {'test': PyTest},
 
-    classifiers = [
+    cmdclass={'test': PyTest},
+
+    classifiers=[
         'Development Status :: 4 - Beta',
         'Intended Audience :: Developers',
         'Natural Language :: English',
