@@ -2,5 +2,9 @@ language: python
 python:
   - '2.7'
   - '3.3'
+install:
+  - pip install coverage coveralls
 script:
-  - python setup.py test
+  - coverage run --source=rembed setup.py test
+  - coveralls
+  - coverage report --fail-under=100
