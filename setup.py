@@ -5,7 +5,7 @@ import sys
 class PyTest(TestCommand):
     def finalize_options(self):
         TestCommand.finalize_options(self)
-        self.test_args = ['mdx_rembed']
+        self.test_args = ['rembed']
         self.test_suite = True
     def run_tests(self):
         #import here, cause outside the eggs aren't loaded
@@ -24,8 +24,9 @@ setup(
     download_url='https://pypi.python.org/pypi/rembed-markdown/',
     license=open('LICENSE.txt').read(),
 
-    provides=['mdx_rembed'],
-    packages=['mdx_rembed'],
+    provides=['rembed.markdown'],
+    packages=['rembed.markdown'],
+    namespace_packages=['rembed'],
 
     install_requires=[
         'rembed',
