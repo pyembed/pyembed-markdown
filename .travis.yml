@@ -6,6 +6,6 @@ install:
   - pip install -e .
   - pip install coverage coveralls
 script:
-  - coverage run --source=rembed setup.py test
+  - coverage run --source=rembed/markdown setup.py test
   - coveralls
   - coverage report --fail-under=100
