@@ -2,7 +2,6 @@ from rembed.markdown.extension import REmbedExtension
 import markdown
 
 from hamcrest import assert_that, contains_string
-import pytest
 
 
 def test_should_get_correct_embedding():

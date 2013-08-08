@@ -1,8 +1,7 @@
 from rembed.markdown.pattern import REmbedPattern
 
 from hamcrest import assert_that, equal_to, none, not_none
-import pytest
-from mock import patch, Mock
+from mock import patch
 
 
 def test_should_match_rembed_link():
