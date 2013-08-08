@@ -3,6 +3,7 @@ python:
   - '2.7'
   - '3.3'
 install:
+  - pip install -e .
   - pip install coverage coveralls
 script:
   - coverage run --source=rembed setup.py test
