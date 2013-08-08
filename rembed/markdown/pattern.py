@@ -1,6 +1,7 @@
 from markdown.inlinepatterns import Pattern
+from rembed.core import consumer
 
-REMBED_PATTERN = 'abc'
+REMBED_PATTERN = '\[!rembed\]\((.*)\)'
 
 
 class REmbedPattern(Pattern):
@@ -9,4 +10,4 @@ class REmbedPattern(Pattern):
         super(REmbedPattern, self).__init__(REMBED_PATTERN)
 
     def handleMatch(self, m):
-        pass
+        return consumer.embed(m.group(2))

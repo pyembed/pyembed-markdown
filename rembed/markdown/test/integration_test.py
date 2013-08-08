@@ -5,7 +5,6 @@ from hamcrest import assert_that, contains_string
 import pytest
 
 
-@pytest.mark.xfail
 def test_should_get_correct_embedding():
     md = markdown.Markdown(extensions=[REmbedExtension()])
     embedding = md.convert(
