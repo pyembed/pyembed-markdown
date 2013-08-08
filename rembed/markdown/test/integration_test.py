@@ -9,5 +9,5 @@ import pytest
 def test_should_get_correct_embedding():
     md = markdown.Markdown(extensions=[REmbedExtension()])
     embedding = md.convert(
-        '![](https://twitter.com/BarackObama/status/266031293945503744)')
+        '[!rembed](https://twitter.com/BarackObama/status/266031293945503744)')
     assert_that(embedding, contains_string('Four more years.'))
