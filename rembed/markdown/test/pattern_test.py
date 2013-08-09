@@ -6,7 +6,7 @@ from mock import patch
 
 def test_should_match_rembed_link():
     re = REmbedPattern().getCompiledRegExp()
-    match = re.match('[!rembed](http://www.example.com)')
+    match = re.match('[!embed](http://www.example.com)')
     assert_that(match, not_none())
 
 
@@ -18,7 +18,7 @@ def test_should_not_match_non_rembed_link():
 
 def test_should_substitute_link_with_embedding():
     pattern = REmbedPattern()
-    source = '[!rembed](http://www.example.com)'
+    source = '[!embed](http://www.example.com)'
     match = pattern.getCompiledRegExp().match(source)
 
     with patch('rembed.core.consumer.embed') as mock_embed:

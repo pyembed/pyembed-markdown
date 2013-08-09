@@ -1,7 +1,7 @@
 from markdown.inlinepatterns import Pattern
 from rembed.core import consumer
 
-REMBED_PATTERN = '\[!rembed\]\((.*)\)'
+REMBED_PATTERN = '\[!embed\]\((.*)\)'
 
 
 class REmbedPattern(Pattern):
