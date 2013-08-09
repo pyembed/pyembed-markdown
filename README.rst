@@ -16,12 +16,28 @@ Python Markdown extension for embedding content using `OEmbed`_.
 
 REmbed-Markdown allows you to embed content in your Markdown websites and
 documents from a wide range of producers.  You don't need to configure
-anything - simply add the extension, and use a link with the text `[!embed]`:
+anything - the extension automatically discovers how to embed content.
+
+Usage
+-----
+
+Initialize the extension like this:
 
 ::
 
-    >>> md = markdown.Markdown(extensions=[REmbedExtension()])
-    >>> embedding = md.convert('[!embed](http://www.youtube.com/watch?v=9bZkp7q19f0)')
+    md = markdown.Markdown(extensions=[REmbedExtension()])
+
+You can then embed content by entering a link with the special text `embed`,
+like this:
+
+::
+    
+    [!embed](http://www.youtube.com/watch?v=9bZkp7q19f0)
+
+This will be turned into the following HTML:
+
+::
+
     <iframe width="480" height="270" src="http://www.youtube.com/embed/9bZkp7q19f0?feature=oembed" frameborder="0" allowfullscreen></iframe>
 
 Compatibility
