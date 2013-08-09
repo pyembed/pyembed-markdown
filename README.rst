@@ -27,7 +27,7 @@ Initialize the extension like this:
 
     md = markdown.Markdown(extensions=[REmbedExtension()])
 
-You can then embed content by entering a link with the special text `embed`,
+You can then embed content by entering a link with the special text `!embed`,
 like this:
 
 ::
