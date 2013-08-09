@@ -1,0 +1,6 @@
+[run]
+include =
+  rembed/markdown/*.py
+
+omit =
+  rembed/markdown/test/*.py
