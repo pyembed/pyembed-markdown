@@ -11,6 +11,7 @@ def test_should_get_correct_embedding():
         '[!embed](https://twitter.com/BarackObama/status/266031293945503744)')
     assert_that(embedding, contains_string('Four more years.'))
 
+
 @pytest.mark.xfail
 def test_should_get_correct_embedding_when_initializing_by_name():
     md = markdown.Markdown(extensions=['rembed.markdown'])
