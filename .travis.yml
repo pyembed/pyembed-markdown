@@ -2,6 +2,10 @@ language: python
 python:
   - '2.7'
   - '3.3'
+env:
+  global:
+  - secure: LZLSS+ju5YRTDs48YnXA3WR89sYGel5U/ODjMDTxVEAdNdqB4PnSyrlwW1iuq/bQXniEVsB05G30W5dGogQ5ytYgwmL8Q0gLtyG62rVCRSsuog+ZxeNcY6AqgluJpKKDQiUuABPVdjvPsl2Degez0wJfcUkyjngRxGYzLTHpS48=
+  - secure: gGZujekUNV7Ke2sxwpBenVOeqknKGIq0fatF/acAwkhblHD5m5HpH6ptA23b+drBWXxsjRmebi6V9PVzhJwwODwk1g64ZlRa6yXEHg01wR2VS4KBv/cfDp/+gDst0SOI0x3zLCy+XvkjLeftbQ+LzyOk30+7GrbxcExxKrcK364=
 install:
   - pip install -e .
   - pip install coverage coveralls
@@ -9,3 +13,11 @@ script:
   - coverage run --source=rembed/markdown setup.py test
   - coveralls
   - coverage report --fail-under=100
+after_success:
+  - if [[ "$TRAVIS_PULL_REQUEST" == "true" ]]; then echo "This is a pull request.  Skipping deployment."; exit 0; fi
+  - if [[ "$TRAVIS_BRANCH" != "master" ]]; then echo "This is not the 'master' branch.  Skipping deployment."; exit 0; fi
+  - if [[ "$TRAVIS_PYTHON_VERSION" != "2.7" ]]; then echo "Not on Python 2.7.  Skipping deployment."; exit 0; fi
+  - echo "[server-login]" > ~/.pypirc
+  - echo "username:" $PYPI_USERNAME >> ~/.pypirc
+  - echo "password:" $PYPI_PASSWORD >> ~/.pypirc
+  - python setup.py sdist upload
