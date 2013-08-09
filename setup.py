@@ -18,7 +18,7 @@ class PyTest(TestCommand):
 
 setup(
     name='rembed-markdown',
-    version='0.1.0',
+    version='0.1.1',
     author='Matt Thomson',
     author_email='matt.thomson@cantab.net',
     url='https://github.com/matt-thomson/rembed-markdown',
