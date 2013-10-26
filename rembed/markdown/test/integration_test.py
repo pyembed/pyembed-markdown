@@ -7,9 +7,10 @@ import pytest
 
 def test_should_get_correct_embedding():
     md = markdown.Markdown(extensions=[REmbedExtension()])
+
     embedding = md.convert(
         '[!embed](https://twitter.com/BarackObama/status/266031293945503744)')
-    print md.inlinePatterns.keys()
+
     assert_that(embedding, contains_string('Four more years.'))
     assert_that(embedding, is_not(contains_string('&gt;')))
 
@@ -17,6 +18,8 @@ def test_should_get_correct_embedding():
 @pytest.mark.xfail
 def test_should_get_correct_embedding_when_initializing_by_name():
     md = markdown.Markdown(extensions=['rembed.markdown'])
+
     embedding = md.convert(
         '[!embed](https://twitter.com/BarackObama/status/266031293945503744)')
+
     assert_that(embedding, contains_string('Four more years.'))
