@@ -6,8 +6,12 @@ REMBED_PATTERN = '\[!embed\]\((.*)\)'
 
 class REmbedPattern(Pattern):
 
-    def __init__(self):
+    def __init__(self, md):
         super(REmbedPattern, self).__init__(REMBED_PATTERN)
 
+        self.md = md
+
     def handleMatch(self, m):
-        return consumer.embed(m.group(2))
+        url = m.group(2)
+        html = consumer.embed(url)
+        return self.md.htmlStash.store(html)
