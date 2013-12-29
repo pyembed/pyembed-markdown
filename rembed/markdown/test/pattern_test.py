@@ -69,7 +69,7 @@ def test_should_pass_through_template_path():
         assert_that(result, not_none())
 
         mock_embed.assert_called_with(
-            'http://www.example.com', None, 200, 'templates')
+            'http://www.example.com', None, None, 'templates')
 
     md.htmlStash.store.assert_called_with('<h1>Bees!</h1>')
 
