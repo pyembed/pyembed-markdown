@@ -3,6 +3,14 @@
 Changes
 =======
 
+v0.2.0, 2013-12-29
+------------------
+
+Enhancements:
+
+- #5: Allow specifying maximum height / width
+- #6: Allow use of custom templates
+
 v0.1.3, 2013-10-26
 ------------------
 
