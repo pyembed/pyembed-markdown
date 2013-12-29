@@ -11,15 +11,16 @@ REMBED_PATTERN = '\[!embed(\?(.*))?\]\((.*)\)'
 
 class REmbedPattern(Pattern):
 
-    def __init__(self, md):
+    def __init__(self, md, template_path=None):
         super(REmbedPattern, self).__init__(REMBED_PATTERN)
 
         self.md = md
+        self.template_path = template_path
 
     def handleMatch(self, m):
         url = m.group(4)
         (max_width, max_height) = self.__parse_params(m.group(3))
-        html = consumer.embed(url, max_width, max_height)
+        html = consumer.embed(url, max_width, max_height, self.template_path)
         return self.md.htmlStash.store(html)
 
     def __parse_params(self, query_string):
