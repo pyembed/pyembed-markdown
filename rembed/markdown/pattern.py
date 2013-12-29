@@ -1,6 +1,10 @@
 from markdown.inlinepatterns import Pattern
 from rembed.core import consumer
-from urlparse import parse_qs
+
+try:  # pragma: no cover
+    from urlparse import parse_qs
+except ImportError:  # pragma: no cover
+    from urllib.parse import parse_qs
 
 REMBED_PATTERN = '\[!embed(\?(.*))?\]\((.*)\)'
 
