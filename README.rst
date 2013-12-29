@@ -61,7 +61,7 @@ the REmbed-Markdown `GitHub`_ page.
 License
 -------
 
-REmbed is distributed under the MIT license.
+REmbed-Markdown is distributed under the MIT license.
 
 ::
 
