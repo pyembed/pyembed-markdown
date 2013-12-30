@@ -12,10 +12,10 @@ script:
 deploy:
   provider: pypi
   user:
-    secure: pI+gRX1Bdo+BNjpWUzfZ9UanwHjLtfiXgdOqiA6lMZVwN3PTlcuHiJNcvTeJuQNYLs0+tVIWOMCIqRf6Jizo84q3QuopQZ4BPDUQeVpIUsRUnor9C63NAWA+XfxExB7J4b+nhF6KitN7igE91z8auQmqKqKaQhV1nQNpYPG9Ado=
+    secure: K4MvR2LZOtXYnuET/+wHq87PS6hWiYX3XmJgHpy6ZK0TWmmN8Q4rqFihvOMIzXE7gFodULMmaGDxS53LkMpmcduzGaqhopSc7yPwHglPv3qN8+lIGUl8WbksXuF9H6vfGixkDI0qqgfbryZLWc8PzvYd3ydIdVSZlXQTZ0nmAtk=
   password:
-    secure: mX+HgHuiCb94ZePN7SSiwOzB9OxIj/+sKID43S/CPbX4IJ0q78yEpaB9XfsIU3wSHsjqwytxYgelzfuhveLlpHfwS4sd3VLXZyNiLfxaqIz4USKoWSKsdhTrilxutXr8Yo8r17LODR74s27879LUsRw0ao0oExOFifYxT0h01iE=
+    secure: NoBtcBhHvgycd5QII9e8uYxJK7befN8FZfFbjUZWfA2dLseOyDxd1Zed55kKbtpMRjJDyi831YEn4ukoTnmSIkH0GfCvxHvnz8QQYioDRaWGQ/Wr7MupTVU8pO28CUmK7KygcQszcsJnVu9tAbs7FBONXUv2xz0oYgqPPNYZgZk=
   on:
     python: 2.7
     tags: true
-    repo: matt-thomson/rembed-markdown
+    repo: rembed/rembed-markdown

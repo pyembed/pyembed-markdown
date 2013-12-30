@@ -21,7 +21,7 @@ setup(
     version='0.2.0',
     author='Matt Thomson',
     author_email='matt.thomson@cantab.net',
-    url='https://github.com/matt-thomson/rembed-markdown',
+    url='https://github.com/rembed/rembed-markdown',
     description='Python Markdown extension for embedding content using OEmbed',
     long_description=open('README.rst').read() + '\n\n' +
         open('CHANGES.rst').read(),

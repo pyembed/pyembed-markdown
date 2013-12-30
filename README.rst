@@ -1,10 +1,10 @@
 REmbed-Markdown
 ===============
 
-.. image:: https://secure.travis-ci.org/matt-thomson/rembed-markdown.png?branch=master
-    :target: http://travis-ci.org/matt-thomson/rembed-markdown
-.. image:: https://coveralls.io/repos/matt-thomson/rembed-markdown/badge.png
-    :target: https://coveralls.io/r/matt-thomson/rembed
+.. image:: https://secure.travis-ci.org/rembed/rembed-markdown.png?branch=master
+    :target: http://travis-ci.org/rembed/rembed-markdown
+.. image:: https://coveralls.io/repos/rembed/rembed-markdown/badge.png
+    :target: https://coveralls.io/r/rembed/rembed
 .. image:: https://pypip.in/v/rembed-markdown/badge.png
     :target: https://crate.io/packages/rembed-markdown/
 .. image:: https://pypip.in/d/rembed-markdown/badge.png
@@ -87,4 +87,4 @@ REmbed-Markdown is distributed under the MIT license.
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .. _OEmbed: http://oembed.com
-.. _GitHub: https://github.com/matt-thomson/rembed-markdown
+.. _GitHub: https://github.com/rembed/rembed-markdown
