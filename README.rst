@@ -4,7 +4,7 @@ REmbed-Markdown
 .. image:: https://secure.travis-ci.org/rembed/rembed-markdown.png?branch=master
     :target: http://travis-ci.org/rembed/rembed-markdown
 .. image:: https://coveralls.io/repos/rembed/rembed-markdown/badge.png
-    :target: https://coveralls.io/r/rembed/rembed
+    :target: https://coveralls.io/r/rembed/rembed-markdown
 .. image:: https://pypip.in/v/rembed-markdown/badge.png
     :target: https://crate.io/packages/rembed-markdown/
 .. image:: https://pypip.in/d/rembed-markdown/badge.png
