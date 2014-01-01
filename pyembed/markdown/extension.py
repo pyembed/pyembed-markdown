@@ -27,9 +27,9 @@ from . import pattern
 
 class PyEmbedExtension(Extension):
 
-    def __init__(self, template_path=None):
-        self.template_path = template_path
+    def __init__(self, renderer=None):
+        self.renderer = renderer
 
     def extendMarkdown(self, md, md_globals):
         md.inlinePatterns.add(
-            'pyembed', pattern.PyEmbedPattern(md, self.template_path), '_begin')
+            'pyembed', pattern.PyEmbedPattern(md, self.renderer), '_begin')
