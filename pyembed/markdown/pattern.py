@@ -1,5 +1,5 @@
 from markdown.inlinepatterns import Pattern
-from rembed.core import consumer
+from pyembed.core import consumer
 
 try:  # pragma: no cover
     from urlparse import parse_qs
@@ -9,10 +9,10 @@ except ImportError:  # pragma: no cover
 REMBED_PATTERN = '\[!embed(\?(.*))?\]\((.*)\)'
 
 
-class REmbedPattern(Pattern):
+class PyEmbedPattern(Pattern):
 
     def __init__(self, md, template_path=None):
-        super(REmbedPattern, self).__init__(REMBED_PATTERN)
+        super(PyEmbedPattern, self).__init__(REMBED_PATTERN)
 
         self.md = md
         self.template_path = template_path

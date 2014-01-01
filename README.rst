@@ -1,18 +1,18 @@
-REmbed-Markdown
+PyEmbed-Markdown
 ===============
 
-.. image:: https://secure.travis-ci.org/rembed/rembed-markdown.png?branch=master
-    :target: http://travis-ci.org/rembed/rembed-markdown
-.. image:: https://coveralls.io/repos/rembed/rembed-markdown/badge.png
-    :target: https://coveralls.io/r/rembed/rembed-markdown
-.. image:: https://pypip.in/v/rembed-markdown/badge.png
-    :target: https://crate.io/packages/rembed-markdown/
-.. image:: https://pypip.in/d/rembed-markdown/badge.png
-    :target: https://crate.io/packages/rembed-markdown/
+.. image:: https://secure.travis-ci.org/pyembed/pyembed-markdown.png?branch=master
+    :target: http://travis-ci.org/pyembed/pyembed-markdown
+.. image:: https://coveralls.io/repos/pyembed/pyembed-markdown/badge.png
+    :target: https://coveralls.io/r/pyembed/pyembed-markdown
+.. image:: https://pypip.in/v/pyembed-markdown/badge.png
+    :target: https://crate.io/packages/pyembed-markdown/
+.. image:: https://pypip.in/d/pyembed-markdown/badge.png
+    :target: https://crate.io/packages/pyembed-markdown/
 
 Python Markdown extension for embedding content using `OEmbed`_.
 
-REmbed-Markdown allows you to embed content in your Markdown websites and
+PyEmbed-Markdown allows you to embed content in your Markdown websites and
 documents from a wide range of producers.  You don't need to configure
 anything - the extension automatically discovers how to embed content.
 
@@ -23,7 +23,7 @@ Initialize the extension like this:
 
 ::
 
-    md = markdown.Markdown(extensions=[REmbedExtension()])
+    md = markdown.Markdown(extensions=[PyEmbedExtension()])
 
 You can then embed content by entering a link with the special text `!embed`,
 like this:
@@ -41,27 +41,27 @@ This will be turned into the following HTML:
 Compatibility
 -------------
 
-REmbed-Markdown has been tested with Python 2.7 and 3.3.
+PyEmbed-Markdown has been tested with Python 2.7 and 3.3.
 
 Installation
 ------------
 
-REmbed-Markdown can be installed using pip:
+PyEmbed-Markdown can be installed using pip:
 
 ::
 
-    pip install rembed-markdown
+    pip install pyembed-markdown
 
 Contributing
 ------------
 
 To report an issue, request an enhancement, or contribute a patch, go to
-the REmbed-Markdown `GitHub`_ page.
+the PyEmbed-Markdown `GitHub`_ page.
 
 License
 -------
 
-REmbed-Markdown is distributed under the MIT license.
+PyEmbed-Markdown is distributed under the MIT license.
 
 ::
 
@@ -87,4 +87,4 @@ REmbed-Markdown is distributed under the MIT license.
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .. _OEmbed: http://oembed.com
-.. _GitHub: https://github.com/rembed/rembed-markdown
+.. _GitHub: https://github.com/pyembed/pyembed-markdown
