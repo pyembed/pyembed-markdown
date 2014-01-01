@@ -1,3 +1,25 @@
+# The MIT License(MIT)
+
+# Copyright (c) 2013-2014 Matt Thomson
+
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+
+# The above copyright notice and this permission notice shall be included in
+# all copies or substantial portions of the Software.
+
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+# THE SOFTWARE.
+
 from setuptools import setup
 from setuptools.command.test import test as TestCommand
 import sys
@@ -7,7 +29,7 @@ class PyTest(TestCommand):
 
     def finalize_options(self):
         TestCommand.finalize_options(self)
-        self.test_args = ['rembed']
+        self.test_args = ['pyembed']
         self.test_suite = True
 
     def run_tests(self):
@@ -17,23 +39,23 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 setup(
-    name='rembed-markdown',
-    version='0.2.0',
+    name='pyembed-markdown',
+    version='0.5.0',
     author='Matt Thomson',
     author_email='matt.thomson@cantab.net',
-    url='https://github.com/rembed/rembed-markdown',
+    url='https://github.com/pyembed/pyembed-markdown',
     description='Python Markdown extension for embedding content using OEmbed',
     long_description=open('README.rst').read() + '\n\n' +
         open('CHANGES.rst').read(),
-    download_url='https://pypi.python.org/pypi/rembed-markdown/',
+    download_url='https://pypi.python.org/pypi/pyembed-markdown/',
     license=open('LICENSE.txt').read(),
 
-    provides=['rembed.markdown'],
-    packages=['rembed.markdown'],
-    namespace_packages=['rembed'],
+    provides=['pyembed.markdown'],
+    packages=['pyembed.markdown'],
+    namespace_packages=['pyembed'],
 
     install_requires=[
-        'rembed',
+        'pyembed',
         'markdown'
     ],
     tests_require=[
