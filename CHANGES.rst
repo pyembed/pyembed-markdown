@@ -3,6 +3,13 @@
 Changes
 =======
 
+v0.6.0, 2014-01-01
+------------------
+
+Enhancements:
+
+- #15: Use pluggable renderer
+
 v0.5.0, 2014-01-01
 ------------------
 
@@ -12,7 +19,7 @@ Breaking changes:
 
 Enhancements:
 
-- #30: Rename to PyEmbed
+- #12: Rename to PyEmbed
 
 v0.2.0, 2013-12-29
 ------------------

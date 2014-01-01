@@ -78,9 +78,10 @@ def test_should_ignore_extra_params():
     generic_embed_test(source, 'http://www.example.com', None, 200, None)
 
 
-def test_should_pass_through_template_path():
+def test_should_pass_through_renderer():
     md = Mock()
-    pattern = PyEmbedPattern(md, 'templates')
+    renderer = Mock()
+    pattern = PyEmbedPattern(md, renderer)
     source = '[!embed](http://www.example.com)'
     match = pattern.getCompiledRegExp().match(source)
 
@@ -91,7 +92,7 @@ def test_should_pass_through_template_path():
         assert_that(result, not_none())
 
         mock_embed.assert_called_with(
-            'http://www.example.com', None, None, 'templates')
+            'http://www.example.com', None, None, renderer)
 
     md.htmlStash.store.assert_called_with('<h1>Bees!</h1>')
 
