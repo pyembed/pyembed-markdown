@@ -20,11 +20,19 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
+from pyembed.core import render
 from pyembed.markdown.extension import PyEmbedExtension
 import markdown
 
 from hamcrest import assert_that, contains_string, equal_to, is_not
 import pytest
+
+
+class DummyRenderer(render.PyEmbedRenderer):
+
+    def render(self, content_url, response):
+        return "%s by %s from %s" % \
+            (response.title, response.author_name, content_url)
 
 
 def test_should_get_correct_embedding():
@@ -47,9 +55,9 @@ def test_should_embed_with_max_height():
     assert_that(embedding, is_not(contains_string('&gt;')))
 
 
-def test_should_embed_with_custom_templates():
+def test_should_embed_with_custom_renderer():
     template_path = 'pyembed/markdown/test/fixtures/templates'
-    md = markdown.Markdown(extensions=[PyEmbedExtension(template_path)])
+    md = markdown.Markdown(extensions=[PyEmbedExtension(DummyRenderer())])
 
     embedding = md.convert(
         '[!embed](http://www.youtube.com/watch?v=qrO4YZeyl0I)')
