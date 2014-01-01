@@ -7,7 +7,7 @@ class PyTest(TestCommand):
 
     def finalize_options(self):
         TestCommand.finalize_options(self)
-        self.test_args = ['rembed']
+        self.test_args = ['pyembed']
         self.test_suite = True
 
     def run_tests(self):
@@ -17,23 +17,23 @@ class PyTest(TestCommand):
         sys.exit(errno)
 
 setup(
-    name='rembed-markdown',
+    name='pyembed-markdown',
     version='0.2.0',
     author='Matt Thomson',
     author_email='matt.thomson@cantab.net',
-    url='https://github.com/rembed/rembed-markdown',
+    url='https://github.com/pyembed/pyembed-markdown',
     description='Python Markdown extension for embedding content using OEmbed',
     long_description=open('README.rst').read() + '\n\n' +
         open('CHANGES.rst').read(),
-    download_url='https://pypi.python.org/pypi/rembed-markdown/',
+    download_url='https://pypi.python.org/pypi/pyembed-markdown/',
     license=open('LICENSE.txt').read(),
 
-    provides=['rembed.markdown'],
-    packages=['rembed.markdown'],
-    namespace_packages=['rembed'],
+    provides=['pyembed.markdown'],
+    packages=['pyembed.markdown'],
+    namespace_packages=['pyembed'],
 
     install_requires=[
-        'rembed',
+        'pyembed',
         'markdown'
     ],
     tests_require=[
