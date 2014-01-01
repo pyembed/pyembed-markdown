@@ -40,7 +40,7 @@ class PyTest(TestCommand):
 
 setup(
     name='pyembed-markdown',
-    version='0.5.0',
+    version='0.6.0',
     author='Matt Thomson',
     author_email='matt.thomson@cantab.net',
     url='https://github.com/pyembed/pyembed-markdown',
