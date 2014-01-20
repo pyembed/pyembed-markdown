@@ -3,6 +3,14 @@
 Changes
 =======
 
+v0.7.1, 2014-01-20
+------------------
+
+Breaking changes:
+
+- The class ``PyEmbedMarkdown`` has been moved to the ``pyembed.markdown``
+  package.
+
 v0.7.0, 2014-01-20
 ------------------
 
