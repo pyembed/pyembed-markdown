@@ -20,8 +20,26 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 
-from . import extension
+from markdown.extensions import Extension
+
+from pyembed.core import PyEmbed
+from . import pattern
+
+
+class PyEmbedMarkdown(Extension):
+
+    def __init__(self, renderer=None):
+        self.renderer = renderer
+
+    def extendMarkdown(self, md, md_globals):
+        if self.renderer:
+            pyembed = PyEmbed(self.renderer)
+        else:
+            pyembed = PyEmbed()
+
+        md.inlinePatterns.add(
+            'pyembed', pattern.PyEmbedPattern(pyembed, md), '_begin')
 
 
 def makeExtension(configs=None):  # pragma: no cover
-    return extension.PyEmbedMarkdown()
+    return PyEmbedMarkdown()
