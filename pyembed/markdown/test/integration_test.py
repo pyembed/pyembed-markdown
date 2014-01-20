@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 
 from pyembed.core import render
-from pyembed.markdown.extension import PyEmbedMarkdown
+from pyembed.markdown import PyEmbedMarkdown
 import markdown
 
 from hamcrest import assert_that, contains_string, equal_to, is_not
