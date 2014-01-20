@@ -3,6 +3,13 @@
 Changes
 =======
 
+v0.7.0, 2014-01-20
+------------------
+
+Breaking changes:
+
+- The class ``PyEmbedExtension`` has been renamed to ``PyEmbedMarkdown``.
+
 v0.6.0, 2014-01-01
 ------------------
 
