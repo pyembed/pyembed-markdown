@@ -26,7 +26,7 @@ from pyembed.core import PyEmbed
 from . import pattern
 
 
-class PyEmbedExtension(Extension):
+class PyEmbedMarkdown(Extension):
 
     def __init__(self, renderer=None):
         self.renderer = renderer
