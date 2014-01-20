@@ -23,13 +23,13 @@ Initialize the extension like this:
 
 ::
 
-    md = markdown.Markdown(extensions=[PyEmbedExtension()])
+    md = markdown.Markdown(extensions=[PyEmbedMarkdown()])
 
 You can then embed content by entering a link with the special text `!embed`,
 like this:
 
 ::
-    
+
     [!embed](http://www.youtube.com/watch?v=9bZkp7q19f0)
 
 This will be turned into the following HTML:

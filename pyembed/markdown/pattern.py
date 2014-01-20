@@ -21,7 +21,6 @@
 # THE SOFTWARE.
 
 from markdown.inlinepatterns import Pattern
-from pyembed.core import consumer
 
 try:  # pragma: no cover
     from urlparse import parse_qs
@@ -33,16 +32,16 @@ REMBED_PATTERN = '\[!embed(\?(.*))?\]\((.*)\)'
 
 class PyEmbedPattern(Pattern):
 
-    def __init__(self, md, renderer=None):
+    def __init__(self, pyembed, md):
         super(PyEmbedPattern, self).__init__(REMBED_PATTERN)
 
+        self.pyembed = pyembed
         self.md = md
-        self.renderer = renderer
 
     def handleMatch(self, m):
         url = m.group(4)
         (max_width, max_height) = self.__parse_params(m.group(3))
-        html = consumer.embed(url, max_width, max_height, self.renderer)
+        html = self.pyembed.embed(url, max_width, max_height)
         return self.md.htmlStash.store(html)
 
     def __parse_params(self, query_string):

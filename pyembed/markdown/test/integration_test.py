@@ -21,7 +21,7 @@
 # THE SOFTWARE.
 
 from pyembed.core import render
-from pyembed.markdown.extension import PyEmbedExtension
+from pyembed.markdown.extension import PyEmbedMarkdown
 import markdown
 
 from hamcrest import assert_that, contains_string, equal_to, is_not
@@ -36,7 +36,7 @@ class DummyRenderer(render.PyEmbedRenderer):
 
 
 def test_should_get_correct_embedding():
-    md = markdown.Markdown(extensions=[PyEmbedExtension()])
+    md = markdown.Markdown(extensions=[PyEmbedMarkdown()])
 
     embedding = md.convert(
         '[!embed](https://twitter.com/BarackObama/status/266031293945503744)')
@@ -46,7 +46,7 @@ def test_should_get_correct_embedding():
 
 
 def test_should_embed_with_max_height():
-    md = markdown.Markdown(extensions=[PyEmbedExtension()])
+    md = markdown.Markdown(extensions=[PyEmbedMarkdown()])
 
     embedding = md.convert(
         '[!embed?max_height=200](http://www.youtube.com/watch?v=9bZkp7q19f0)')
@@ -57,7 +57,7 @@ def test_should_embed_with_max_height():
 
 def test_should_embed_with_custom_renderer():
     template_path = 'pyembed/markdown/test/fixtures/templates'
-    md = markdown.Markdown(extensions=[PyEmbedExtension(DummyRenderer())])
+    md = markdown.Markdown(extensions=[PyEmbedMarkdown(DummyRenderer())])
 
     embedding = md.convert(
         '[!embed](http://www.youtube.com/watch?v=qrO4YZeyl0I)')

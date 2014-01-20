@@ -22,14 +22,20 @@
 
 from markdown.extensions import Extension
 
+from pyembed.core import PyEmbed
 from . import pattern
 
 
-class PyEmbedExtension(Extension):
+class PyEmbedMarkdown(Extension):
 
     def __init__(self, renderer=None):
         self.renderer = renderer
 
     def extendMarkdown(self, md, md_globals):
+        if self.renderer:
+            pyembed = PyEmbed(self.renderer)
+        else:
+            pyembed = PyEmbed()
+
         md.inlinePatterns.add(
-            'pyembed', pattern.PyEmbedPattern(md, self.renderer), '_begin')
+            'pyembed', pattern.PyEmbedPattern(pyembed, md), '_begin')
