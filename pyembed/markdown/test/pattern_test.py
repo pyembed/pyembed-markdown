@@ -29,7 +29,7 @@ from mock import patch, Mock
 def test_should_match_pyembed_link():
     md = Mock()
 
-    re = PyEmbedPattern(md).getCompiledRegExp()
+    re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[!embed](http://www.example.com)')
 
     assert_that(match, not_none())
@@ -38,7 +38,7 @@ def test_should_match_pyembed_link():
 def test_should_match_pyembed_link_with_params():
     md = Mock()
 
-    re = PyEmbedPattern(md).getCompiledRegExp()
+    re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[!embed?param=value](http://www.example.com)')
 
     assert_that(match, not_none())
@@ -47,7 +47,7 @@ def test_should_match_pyembed_link_with_params():
 def test_should_not_match_non_pyembed_link():
     md = Mock()
 
-    re = PyEmbedPattern(md).getCompiledRegExp()
+    re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[example](http://www.example.com)')
 
     assert_that(match, none())
@@ -55,59 +55,39 @@ def test_should_not_match_non_pyembed_link():
 
 def test_should_substitute_link_with_embedding():
     source = '[!embed](http://www.example.com)'
-    generic_embed_test(source, 'http://www.example.com', None, None, None)
+    generic_embed_test(source, 'http://www.example.com', None, None)
 
 
 def test_should_apply_max_height():
     source = '[!embed?max_height=200](http://www.example.com)'
-    generic_embed_test(source, 'http://www.example.com', None, 200, None)
+    generic_embed_test(source, 'http://www.example.com', None, 200)
 
 
 def test_should_apply_max_width():
     source = '[!embed?max_width=100](http://www.example.com)'
-    generic_embed_test(source, 'http://www.example.com', 100, None, None)
+    generic_embed_test(source, 'http://www.example.com', 100, None)
 
 
 def test_should_apply_max_height_and_width():
     source = '[!embed?max_width=100&max_height=200](http://www.example.com)'
-    generic_embed_test(source, 'http://www.example.com', 100, 200, None)
+    generic_embed_test(source, 'http://www.example.com', 100, 200)
 
 
 def test_should_ignore_extra_params():
     source = '[!embed?max_height=200&extra=value](http://www.example.com)'
-    generic_embed_test(source, 'http://www.example.com', None, 200, None)
-
-
-def test_should_pass_through_renderer():
-    md = Mock()
-    renderer = Mock()
-    pattern = PyEmbedPattern(md, renderer)
-    source = '[!embed](http://www.example.com)'
-    match = pattern.getCompiledRegExp().match(source)
-
-    with patch('pyembed.core.consumer.embed') as mock_embed:
-        mock_embed.return_value = '<h1>Bees!</h1>'
-
-        result = pattern.handleMatch(match)
-        assert_that(result, not_none())
-
-        mock_embed.assert_called_with(
-            'http://www.example.com', None, None, renderer)
-
-    md.htmlStash.store.assert_called_with('<h1>Bees!</h1>')
+    generic_embed_test(source, 'http://www.example.com', None, 200)
 
 
 def generic_embed_test(source, *embed_params):
     md = Mock()
-    pattern = PyEmbedPattern(md)
+    pyembed = Mock()
+    pyembed.embed.return_value = '<h1>Bees!</h1>'
+
+    pattern = PyEmbedPattern(pyembed, md)
     match = pattern.getCompiledRegExp().match(source)
 
-    with patch('pyembed.core.consumer.embed') as mock_embed:
-        mock_embed.return_value = '<h1>Bees!</h1>'
+    result = pattern.handleMatch(match)
+    assert_that(result, not_none())
 
-        result = pattern.handleMatch(match)
-        assert_that(result, not_none())
-
-        mock_embed.assert_called_with(*embed_params)
-
+    pyembed.embed.assert_called_with(*embed_params)
     md.htmlStash.store.assert_called_with('<h1>Bees!</h1>')
