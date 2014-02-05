@@ -5,10 +5,16 @@ PyEmbed-Markdown
     :target: http://travis-ci.org/pyembed/pyembed-markdown
 .. image:: https://coveralls.io/repos/pyembed/pyembed-markdown/badge.png
     :target: https://coveralls.io/r/pyembed/pyembed-markdown
-.. image:: https://pypip.in/v/pyembed-markdown/badge.png
-    :target: https://crate.io/packages/pyembed-markdown/
 .. image:: https://pypip.in/d/pyembed-markdown/badge.png
-    :target: https://crate.io/packages/pyembed-markdown/
+    :target: https://pypi.python.org/pypi/pyembed-markdown/
+.. image:: https://pypip.in/v/pyembed-markdown/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-markdown/
+.. image:: https://pypip.in/wheel/pyembed-markdown/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-markdown/
+.. image:: https://pypip.in/egg/pyembed-markdown/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-markdown/
+.. image:: https://pypip.in/license/pyembed-markdown/badge.png
+    :target: https://pypi.python.org/pypi/pyembed-markdown/
 
 Python Markdown extension for embedding content using `OEmbed`_.
 
@@ -37,6 +43,8 @@ This will be turned into the following HTML:
 ::
 
     <iframe width="480" height="270" src="http://www.youtube.com/embed/9bZkp7q19f0?feature=oembed" frameborder="0" allowfullscreen></iframe>
+
+For more information, see the `PyEmbed`_ website.
 
 Compatibility
 -------------
@@ -87,4 +95,5 @@ PyEmbed-Markdown is distributed under the MIT license.
     WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 .. _OEmbed: http://oembed.com
+.. _PyEmbed: http://pyembed.github.io
 .. _GitHub: https://github.com/pyembed/pyembed-markdown

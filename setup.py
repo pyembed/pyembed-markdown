@@ -40,10 +40,10 @@ class PyTest(TestCommand):
 
 setup(
     name='pyembed-markdown',
-    version='0.7.1',
+    version='1.0.0',
     author='Matt Thomson',
-    author_email='matt.thomson@cantab.net',
-    url='https://github.com/pyembed/pyembed-markdown',
+    author_email='mattjohnthomson@gmail.com',
+    url='http://pyembed.github.io',
     description='Python Markdown extension for embedding content using OEmbed',
     long_description=open('README.rst').read() + '\n\n' +
         open('CHANGES.rst').read(),
@@ -67,7 +67,7 @@ setup(
     cmdclass={'test': PyTest},
 
     classifiers=[
-        'Development Status :: 4 - Beta',
+        'Development Status :: 5 - Production/Stable',
         'Intended Audience :: Developers',
         'Natural Language :: English',
         'License :: OSI Approved :: MIT License',
