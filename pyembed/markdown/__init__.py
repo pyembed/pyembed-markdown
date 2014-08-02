@@ -27,13 +27,13 @@ from . import pattern
 
 
 class PyEmbedMarkdown(Extension):
-
     def __init__(self, renderer=None):
+        super(PyEmbedMarkdown, self).__init__()
         self.renderer = renderer
 
     def extendMarkdown(self, md, md_globals):
         if self.renderer:
-            pyembed = PyEmbed(self.renderer)
+            pyembed = PyEmbed(renderer=self.renderer)
         else:
             pyembed = PyEmbed()
 

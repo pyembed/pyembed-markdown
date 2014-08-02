@@ -46,13 +46,14 @@ class PyEmbedPattern(Pattern):
 
     def __parse_params(self, query_string):
         if not query_string:
-            return (None, None)
+            return None, None
 
         query_params = parse_qs(query_string)
         return (self.__get_query_param(query_params, 'max_width'),
                 self.__get_query_param(query_params, 'max_height'))
 
-    def __get_query_param(self, query_params, name):
+    @staticmethod
+    def __get_query_param(query_params, name):
         if name in query_params:
             return int(query_params[name][0])
         else:

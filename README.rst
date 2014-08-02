@@ -49,7 +49,7 @@ For more information, see the `PyEmbed`_ website.
 Compatibility
 -------------
 
-PyEmbed-Markdown has been tested with Python 2.7 and 3.3.
+PyEmbed-Markdown has been tested with Python 2.7, 3.3 and 3.4.
 
 Installation
 ------------
