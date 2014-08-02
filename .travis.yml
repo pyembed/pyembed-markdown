@@ -4,13 +4,14 @@ python:
 - '3.3'
 install:
 - pip install -e .
-- pip install coverage coveralls
+- pip install coverage coveralls wheel
 script:
 - coverage run setup.py test
 - coveralls
 - coverage report --fail-under=100
 deploy:
   provider: pypi
+  distributions: "sdist bdist_wheel"
   user:
     secure: R/mKfMxKp6sJ/jD9cD7A9+BHjQHwpEqRm72TR0zLDjJyUw82OKn9Fahi7z/virg6/kJzyD1R1kt3M9FgqEc2owE3lX8XSbIhv//Bic12NP7l93X0KjdOWdoyhDQRU95d8K55VKV0ff1SK2EgsZ/pL26bM+CZTj+1zrfLaUE20WI=
   password:
@@ -19,3 +20,4 @@ deploy:
     python: 2.7
     tags: true
     repo: pyembed/pyembed-markdown
+    branch: master
