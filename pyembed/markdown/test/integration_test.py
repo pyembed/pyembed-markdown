@@ -56,7 +56,6 @@ def test_should_embed_with_max_height():
 
 
 def test_should_embed_with_custom_renderer():
-    template_path = 'pyembed/markdown/test/fixtures/templates'
     md = markdown.Markdown(extensions=[PyEmbedMarkdown(DummyRenderer())])
 
     embedding = md.convert(
