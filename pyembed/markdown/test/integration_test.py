@@ -25,6 +25,7 @@ from pyembed.markdown import PyEmbedMarkdown
 import markdown
 
 import pytest
+import vcr
 
 
 class DummyRenderer(render.PyEmbedRenderer):
@@ -34,6 +35,7 @@ class DummyRenderer(render.PyEmbedRenderer):
             (response.title, response.author_name, content_url)
 
 
+@vcr.use_cassette('pyembed/markdown/test/fixtures/cassettes/correct_embedding.yml')
 def test_should_get_correct_embedding():
     md = markdown.Markdown(extensions=[PyEmbedMarkdown()])
 
@@ -44,6 +46,7 @@ def test_should_get_correct_embedding():
     assert '&gt;' not in embedding
 
 
+@vcr.use_cassette('pyembed/markdown/test/fixtures/cassettes/max_height.yml')
 def test_should_embed_with_max_height():
     md = markdown.Markdown(extensions=[PyEmbedMarkdown()])
 
@@ -54,6 +57,7 @@ def test_should_embed_with_max_height():
     assert '&gt;' not in embedding
 
 
+@vcr.use_cassette('pyembed/markdown/test/fixtures/cassettes/custom_renderer.yml')
 def test_should_embed_with_custom_renderer():
     md = markdown.Markdown(extensions=[PyEmbedMarkdown(DummyRenderer())])
 
@@ -65,7 +69,7 @@ def test_should_embed_with_custom_renderer():
         'http://www.youtube.com/watch?v=qrO4YZeyl0I</p>'
 
 
-@pytest.mark.xfail
+@vcr.use_cassette('pyembed/markdown/test/fixtures/cassettes/initialize_by_name.yml')
 def test_should_get_correct_embedding_when_initializing_by_name():
     md = markdown.Markdown(extensions=['pyembed.markdown'])
 

@@ -60,7 +60,8 @@ setup(
     ],
     tests_require=[
         'mock',
-        'pytest'
+        'pytest',
+        'vcrpy'
     ],
 
     cmdclass={'test': PyTest},
