@@ -59,9 +59,9 @@ setup(
         'markdown'
     ],
     tests_require=[
-        'PyHamcrest',
         'mock',
-        'pytest'
+        'pytest',
+        'vcrpy'
     ],
 
     cmdclass={'test': PyTest},

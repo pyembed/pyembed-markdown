@@ -22,7 +22,6 @@
 
 from pyembed.markdown.pattern import PyEmbedPattern
 
-from hamcrest import assert_that, equal_to, none, not_none
 from mock import patch, Mock
 
 
@@ -32,7 +31,7 @@ def test_should_match_pyembed_link():
     re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[!embed](http://www.example.com)')
 
-    assert_that(match, not_none())
+    assert match
 
 
 def test_should_match_pyembed_link_with_params():
@@ -41,7 +40,7 @@ def test_should_match_pyembed_link_with_params():
     re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[!embed?param=value](http://www.example.com)')
 
-    assert_that(match, not_none())
+    assert match
 
 
 def test_should_not_match_non_pyembed_link():
@@ -50,7 +49,7 @@ def test_should_not_match_non_pyembed_link():
     re = PyEmbedPattern(None, md).getCompiledRegExp()
     match = re.match('[example](http://www.example.com)')
 
-    assert_that(match, none())
+    assert not match
 
 
 def test_should_substitute_link_with_embedding():
@@ -87,7 +86,7 @@ def generic_embed_test(source, *embed_params):
     match = pattern.getCompiledRegExp().match(source)
 
     result = pattern.handleMatch(match)
-    assert_that(result, not_none())
+    assert result
 
     pyembed.embed.assert_called_with(*embed_params)
     md.htmlStash.store.assert_called_with('<h1>Bees!</h1>')
