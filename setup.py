@@ -59,7 +59,6 @@ setup(
         'markdown'
     ],
     tests_require=[
-        'PyHamcrest',
         'mock',
         'pytest'
     ],
